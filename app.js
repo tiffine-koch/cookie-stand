@@ -1,56 +1,83 @@
-var CookieStand = function(place, minCustHour, maxCustHour, avgCookCust, cookiesPerHour, totalCookies, dailyList ) {
+function CookieStand(place, minCustHour, maxCustHour, avgCookCust) {
   this.place = place;
   this.minCustHour = minCustHour;
   this.maxCustHour = maxCustHour;
   this.avgCookCust = avgCookCust;
-  this.cookiesPerHour = cookiesPerHour;
+  this.totalCookiesPerDay = 0;
+  this.cookiesPerHour = [];
 
   this.randCustHour = function() {
     return Math.floor(Math.random() * (this.maxCustHour - this.minCustHour + 1)) + this.minCustHour;
-​  };
-  
-  this.cookiesPerHour = function() {
-    return Math.floor(this.randCustHour() * this.avgCookCust);
   };
   
-  this.runTotalCookies = function() {
-    this.totalCookies = [];
-    for(var i = 0; i < 8; i++) {
-      CookieStand.totalCookies.push(CookieStand.totalCookHour());
-      console.log(CookieStand.totalCookies);
-    };
-
-  this.makeUL = function(arr) {
-    for(var i = 0; i < this.hoursInDay.length; i++) {
-      this.cookiesPerHour[i] = Math.floor(this.randCustHour() * this.avgCookiesCust);
-      this.totalValue += this.totalCookHour[i];
-      console.log(this.place + ' ' + this.hoursInDay[i] + ': ' + this.cookiesPerHour[i]);
-      console.log(this.place + ' run.totalCookies: ' + this.totalCookies);
-    };
+  this.getCookiesPerHour = function() {
+    var hourly = 0;
+    hourly = Math.floor(this.randCustHour() * this.avgCookCust);
+    this.cookiesPerHour.push(hourly);
+    return hourly;
   };
+  
+  this.getTotalCookies = function() {
+    var totalCookies = 0;
+    for (var i = 0; i < 8; i++) {
+      totalCookies += this.getCookiesPerHour();
+    }
+    this.totalCookiesPerDay = totalCookies;
+    return totalCookies;
+  };
+  
+  this.getTotalCookies();
+
+  function makeTable(place, cookiesPerHour, totalCookiesPerDay) {
+    var table = document.getElementById('dailyList');
+    var row = document.createElement ('tr');
+    table.appendChild(row);
+
+    var tdPlace = document.createElement('td');
+    tdPlace.textContent = place;
+    row.appendChild(tdPlace);
+
+    for(var i = 0; i < cookiesPerHour.length; i++) {
+      var tdCookiesPerHour = document.createElement('td');
+      tdCookiesPerHour.textContent = cookiesPerHour[i]; 
+      row.appendChild(tdCookiesPerHour);
+    }
+     var tdTotal = document.createElement('td');
+     tdTotal.textContent = totalCookiesPerDay;
+     row.appendChild(tdTotal); 
+   }
+   makeTable(this.place, this.cookiesPerHour, this.totalCookiesPerDay);
 };
-​
-  this.hoursInDay = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
-  this.placeList = ['pikePlace', 'seatac', 'southcenter', 'bellevue', 'alki'],
-  this.cookiesPerHour = [];
-  this.dailyList = [];
-  this.totalCookies = 0;
 
-  this.makeH2 = function(arr)
-    for(var i = 0; i < arr.length; i++) {
-      this.dailyList.push(this.cookiesPerHour());
-      this.totalCookies += this.cookiesPerHour();
-      var list = document.getElementById('place');
-      var li = document.createElement('li');
-      item.appendChild(document.createTextNode(arr[i] + ': ' +  this.dailyList[i] + ' cookies'));
-      list.appendChild(li);
+var pikePlace = new CookieStand('Pike Place', 17, 88, 5);
+var seatac = new CookieStand('Seatac', 6, 44, 1);
+var southcenter = new CookieStand('Southcenter', 11, 38, 1);
+var bellevue = new CookieStand('Bellevue', 20, 48, 3);
+var alki = new CookieStand('Alki', 3, 24, 2);
 
-var pikePlace = new CookieStand('pikePlace', 17, 88, 5.2);
-var seatac = new CookieStand('seatac', 6, 44, 1.2);
-var southcenter = new CookieStand('southcenter', 11, 38, 1.9);
-var bellevue = new CookieStand('bellevue', 20, 48, 3.3);
-var alki = new CookieStand('alki', 3, 24, 2.6);
+var newStoreData = function(event) {
 
-for (var i = 0; i < placeNames.length; i++) {
-  placeList[i].makeUL();
+event.preventDefault();
+
+var place = document.getElementById('place');
+var minCustHour = document.getElementById('minCustHour');
+var maxCustHour = document.getElementById('maxCustHour');
+var avgCookCust = document.getElementById('avgCookCust');
+
+if (!place.value || !minCustHour.value || !maxCustHour.value || !avgCookCust.value) {
+  return alert('Please enter a value in this field');
+  } else {
+console.log(place.value);
+console.log(minCustHour.value);
+console.log(maxCustHour.value);
+console.log(avgCookCust.value);
+  };
+
+ var newCookieStand = new CookieStand(place.value, minCustHour.value, maxCustHour.value, avgCookCust.value)
+
 };
+
+//var addCookiestand = getElementById(addCookiestand);
+var submit = document.getElementById('submit');
+submit.addEventListener('click', newStoreData);
+
