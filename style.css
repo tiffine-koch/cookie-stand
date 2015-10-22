@@ -1,25 +1,41 @@
 
-title {
-	font-family: 'Lobster Two';
-	font-size: 36px;
-	color: orange;
+#title {
+	font-family: 'Boogaloo';
+	font-size: 50px;
+	color: #3b5272;
+	font-weight: bold;
+	border: 3px solid #3b5272;
 }
 
 body {
-  font-family: 'Lobster Two';
-  font-size: 14px;
+  font-family: 'Boogaloo';
+  font-size: 20px;
   color: red;
-  background-color: #E6E6E6;
+  background-color: #ceced8;
 }
 
-h1{
+#dailyList {
+	font-family: Georgia;
+	font-size: 20px #3b5272;
+	border: 2px solid;
+}
+
+#family {
+	border: 5px solid #3b5272;
+	background-color: #d3a493;
+}
+img.famPhoto {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+/*h1{
 	font-family: : 'Lobster Two';
 	font-size: 30px;
 	color: orange;
-}
+}*/
 
-h3 {
-	font-family: 'Lobster Two';
+h5 {
+	font-family: 'Boogaloo';
 	font-size: 22px;
 	color: #990033;}
 
@@ -29,7 +45,7 @@ h2 {
 }
 
 ul { 
-	font-family: 'Lobster Two';
+	font-family: 'Boogaloo';
 	font-size: 14px;
 	color: #FF3300;
 }

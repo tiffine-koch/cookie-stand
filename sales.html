@@ -2,15 +2,25 @@
 <html>
 <head>
 	<title>Pat's Awesome Salmon Cookies</title>
-	<link href= "style.css" type="text.css" rel="stylesheet">
+	<link href= "style.css" rel="stylesheet" />
+	<link href="skeleton.css" rel="stylesheet" />
+	<link href="normalize.css" rel="stylesheet" />
+	<link href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1>Pat's Awesome Salmon Cookies</h1>
-	<img src= "img/mix.jpg" width="300" />
-	<img src= "img/Yum.jpg" width="300" />
-	<img src= "img/chef.jpg" width="300"  height="150" />
-	
-	<table id="dailyList">
+
+ <div class="container">
+	<div class="row">
+		<div class="twelve columns">
+			<h1 id="title">Pat's Awesome Salmon Cookies</h1>
+			<img src= "img/mix.jpg" width="250" />
+			<img src= "img/salmon.png" width="250" />
+			<img src= "img/Yum.jpg" width="250" />
+		</div>
+	</div>
+
+	<article class="tableArt">
+	<table id="dailyList" class="u-full-width">
 		<th>Location</th>
 		<th>10am</th>
 		<th>11am</th>
@@ -22,9 +32,10 @@
 		<th>5pm</th>
 		<th>Total Daily Cookies</th>
 	</table>	
-
+	</article>
+	
 		<form>
-		<h2>Add new store location</h2>
+		<h5>Add new store location</h5>
 		<p>
 		Location:
 		<input id="place" type="text" name="place"></p>

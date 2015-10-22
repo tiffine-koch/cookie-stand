@@ -3,33 +3,68 @@
 <head>
 	<title>Pat's Awesome Salmon Cookies</title>
 	<link href= "style.css" type="text.css" rel="stylesheet">
+	<link href="skeleton.css" rel="stylesheet">
+	<link href="normalize.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1>Pat's Awesome Salmon Cookies</h1>
-	<img src= "img/mix.jpg" width="300" />
-	<img src= "img/Yum.jpg" width="300" />
-	<img src= "img/chef.jpg" width="300"  height="150" />
-	<h3>Pikes Place Market</h3>
-		<h2 id='totalpikePlace'></h2>
-		<ul id='pikePlace'></ul>
-		
-	<h3>Seatac</h3>
-		<h2 id='totalseatac'></h2>
-		<ul id='seatac'></ul>
+<div class="container">
+	<div class="row">
+		<div class="twelve columns">
+			<h1 id="title">Pat's Awesome Salmon Cookies</h1>
+			<img src= "img/mix.jpg" width="300" />
+			<img src= "img/salmon.png" width="300" />
+			<img src= "img/Yum.jpg" width="300" />
+		</div>
+	</div>
 
-	<h3>Southcenter</h3>
-		<h2 id='totalsouthcenter'></h2>
-		<ul id='southcenter'></ul>
+	<div class="row">
+		<div class="two columns">
+			<h5>Pikes Place Market</h5>
+			<h2 id='totalpikePlace'></h2>
+			<ul id='pikePlace'></ul>
+		</div>
+			<div class="two columns">
+			<h5>Seatac</h5>
+			<h2 id='totalseatac'></p>
+			<ul id='seatac'></ul>
+		</div>
+		<div class="two columns">
+			<h5>Southcenter</h5>
+			<h2 id='totalsouthcenter'></h2>
+			<ul id='southcenter'></ul>
+		</div>	
+		<div class="two columns">
+			<h5>Bellevue</h5>
+			<h2 id='totalbellevue'></h2>
+			<ul id='bellevue'></ul>
+		</div>
+		<div class="two columns">
+			<h5>Alki</h5>
+			<h2 id='totalalki'></h2>
+			<ul id='alki'></ul>
+		</div>
+	</div>
+</div>
 
-	<h3>Bellevue</h3>
-		<h2 id='totalbellevue'></h2>
-		<ul id='bellevue'></ul>
-
-	<h3>Alki</h3>
-		<h2 id='totalalki'></h2>
-		<ul id='alki'></ul>
-
+<div id="family" class="container">
+	<div class="row">
+		<div class="four columns">
+		<img id="famPhoto" src="img/family.jpg" width="300" />
+		</div>
+		<div class="eight columns">
+		<p>Echo Park migas Williamsburg, authentic chia sustainable swag tattooed gluten-free biodiesel seitan. Narwhal Intelligentsia VHS cray bespoke, sartorial Neutra seitan typewriter. Street art 8-bit sartorial small batch, typewriter plaid gentrify lo-fi keytar post-ironic fanny pack squid. Cred letterpress Blue Bottle brunch migas. Roof party jean shorts mlkshk, cliche selvage Portland cray flexitarian fingerstache Tumblr vegan drinking vinegar viral chia iPhone. 8-bit stumptown readymade crucifix, Pitchfork swag leggings forage master cleanse. Normcore</p>
+		</div>
+	<div class="row">	
+		<div class="four columns">
+		<img id="tshirt" src="img/tshirt.jpg" width="300"/>
+		</div>
+		<div class="eight columns">
+		<p>Austin pour-over pug.Cornhole fingerstache PBR&B chillwave, meditation sustainable tilde pork belly Pitchfork Vice Kickstarter. Cred art party Bushwick, gastropub Shoreditch selfies skateboard Schlitz gentrify. Butcher actually pork belly selvage tote bag, normcore Odd Future Marfa before they sold out XOXO Tumblr readymade cronut. Mlkshk vegan paleoAustin pour-over pug.Cornhole fingerstache PBR&B chillwave, meditation sustainable tilde pork belly Pitchfork Vice Kickstarter. Cred art party Bushwick, gastropub Shoreditch selfies skateboard Schlitz gentrify. Butcher actually pork belly selvage tote bag, normcore Odd Future Marfa before they sold out XOXO Tumblr readymade cronut. Mlkshk vegan paleo</p>
+		</div>
+	</div>
+</div>			
 	<script src= "app.js"></script>
-	<img src= "img/salmon.png" width="300" />
+
 </body>
 </html>
